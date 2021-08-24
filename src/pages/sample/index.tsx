@@ -3,6 +3,7 @@ import { Container } from "../../ui/components/container";
 import { TableHead } from "../../ui/components/table/head";
 import { ModalConfirmation } from "../../ui/components/modal/confirmation";
 import { Modal } from "../../ui/components/modal/common";
+import { Loading } from "../../ui/components/loading";
 import React from "react";
 
 class SamplePage extends React.Component {
@@ -53,7 +54,7 @@ class SamplePage extends React.Component {
               okButton="Delete"
             />
             <Modal
-              isShowing={true}
+              isShowing={false}
               onSubmit={() => {}}
               onClose={() => {}}
               size="full"
@@ -62,6 +63,7 @@ class SamplePage extends React.Component {
             >
               Test
             </Modal>
+            <Loading isLoading={false} text={"Loading..."} />
           </Container>
         </Container>
       </div>
