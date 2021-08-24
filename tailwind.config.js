@@ -29,8 +29,19 @@ module.exports = {
       neutralLight: colors.blue[500],
       danger: colors.red[700],
       dangerLight: colors.red[500],
-      green: colors.green[700],
       greenLight: colors.green[500],
+
+
+      current: "currentColor",
+      gray: colors.coolGray,
+      red: colors.red,
+      blue: colors.blue,
+      yellow: colors.amber,
+      indigo: colors.indigo,
+      oragne: colors.orange,
+      purple: colors.purple,
+      pink: colors.pink,
+      green: colors.green,
     },
     extend: {
       backgroundImage: (theme) => ({

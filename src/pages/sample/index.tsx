@@ -4,9 +4,19 @@ import { TableHead } from "../../ui/components/table/head";
 import { ModalConfirmation } from "../../ui/components/modal/confirmation";
 import { Modal } from "../../ui/components/modal/common";
 import { Loading } from "../../ui/components/loading";
+import { withToast } from "../../ui/components/Toast/withToast";
 import React from "react";
 
-class SamplePage extends React.Component {
+interface Props {
+  toast: any;
+}
+
+class SamplePage extends React.Component<Props> {
+
+  componentDidMount(){
+    this.props.toast?.pushSuccess("Action success", 1500);
+    this.props.toast?.pushError("pushError", 1500);
+  }
   render() {
     return (
       <div>
@@ -16,7 +26,7 @@ class SamplePage extends React.Component {
             <Button>tes</Button>
             <br />
             <Button
-              onClick={() => {}}
+              onClick={() => this.props.toast?.pushSuccess("Action success", 1500)}
               className="max-w-xs flex items-center text-center content-center "
               variant="main"
             >
@@ -71,4 +81,4 @@ class SamplePage extends React.Component {
   }
 }
 
-export default SamplePage;
+export default withToast(SamplePage);
